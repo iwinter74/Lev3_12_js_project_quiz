@@ -4,21 +4,6 @@ let data=[
       question:"Which ocean lies on the east coast of the United States?",
       choice:["Eastern","Pacific","Indian","Atlantic"],
         answer: "Atlantic",
-        // compare(elt) {
-        //     console.log(data[0].answer);
-        //     console.log("this is"+elt)
-        //     data[0].choice.forEach(element => {
-        //         if (element == data[0].answer) {
-        //             console.log("true")
-        //             console.log("this is"+elt)
-        //             elt.classList.add("true")
-        //         } else {
-        //             console.log("false")
-        //             elt.classList.add("false")
-        //             }
-        //     });
-            
-        // }
     },
     { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/4d101ba1-9275-4fb5-ba2c-5606e6c0274e.jpg",
