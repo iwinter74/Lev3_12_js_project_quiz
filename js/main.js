@@ -74,6 +74,7 @@ data.forEach(element => {
 
 
 
+
 function compare(x) {
 
     data.forEach(element => {
