@@ -74,7 +74,6 @@ data.forEach(element => {
 
 
 
-
 function compare(x) {
 
     data.forEach(element => {
@@ -84,10 +83,12 @@ function compare(x) {
             console.log("choice " + a)
             if (a == b) {
                 console.log("true")
-                x.classList.add("true")
+              x.classList.add("true")
+              setTimeout(function () {x.classList.remove('true') }, 1000);
                 } else {
                 console.log("false")
-                x.classList.add("false")
+              x.classList.add("false")
+              setTimeout(function () {x.classList.remove('false') }, 1000);
                 }
             });
         
