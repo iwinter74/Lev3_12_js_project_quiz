@@ -3,13 +3,13 @@ let data=[
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/4a864049-816a-479e-8736-51740e8b724b.jpg",
       question:"Which ocean lies on the east coast of the United States?",
       choice:["Eastern","Pacific","Indian","Atlantic"],
-        answer: "Atlantic",
+      answer: "Atlantic",
     },
     { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/4d101ba1-9275-4fb5-ba2c-5606e6c0274e.jpg",
-      question:"Which is the world's highest mountain?",
-      choice:["K2","Makalu","Mount Everest","Kilimanjaro"],
-      answer:"Mount Everest"
+      question:"Which is the worlds highest mountain?",
+      choice:["K2","Makalu","Mount_Everest","Kilimanjaro"],
+      answer:"MountEverest",
     },
     { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/07121a24-b34b-4711-9bfa-5287163e65ce.jpg",
@@ -20,14 +20,14 @@ let data=[
     { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/467a486b-be3a-4183-90ed-dd6867d5852d.jpg",
       question:"True or False: Iceland is covered in ice.",
-      choice:[true,false],
-      answer:false
+      choice:["vrai","faux"],
+      answer:"faux"
     },
     { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/ecf8af7b-8541-4572-b63b-ee7d7f9fc4cc.jpg",
       question:"The United Kingdom is comprised of how many countries?",
-      choice:[1,2,3,4],
-      answer:4
+      choice:["One","Two","Three","Four"],
+      answer:"Four"
     },
     { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/ecf8af7b-8541-4572-b63b-ee7d7f9fc4cc.jpg",
@@ -38,7 +38,7 @@ let data=[
       { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/6e99b817-7be7-4f8a-9146-3f602ac81fad.jpg",
       question:"Which U.S. state is the Grand Canyon located in?",
-      choice:["Wyoming","Arizona","New Mexico","Nevada"],
+      choice:["Wyoming","Arizona","New_Mexico","Nevada"],
       answer:"Arizona"
     },
    { 
@@ -50,50 +50,86 @@ let data=[
    { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/13efaf72-d695-4f65-b043-2b805b6a88eb.jpg",
       question:"Which is the longest river in the world?",
-      choice:["Amazon River","Congo River","Yellow River","Nile River"],
-      answer:"Nile River"
+      choice:["Amazon_River","Congo_River","Yellow_River","Nile_River"],
+      answer:"Nile_River"
     },
    { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/1226f177-dc1a-4142-8875-bdaa177717d7.jpg",
       question:"Which is the largest body of water?",
-      choice:["indian Ocean","Pacific Ocean","Atlantic Ocean","Nile"],
-      answer:"Pacific Ocean"
+      choice:["indian_Ocean","Pacific_Ocean","Atlantic_Ocean","Nile"],
+      answer:"Pacific_Ocean"
     }
 ]
 
-data.forEach(element => {
-    document.getElementById("content").innerHTML +=
-`<img src="${element.url}" alt="">
-<p>${element.question}</p>`
-    element.choice.forEach(elt => {
-    document.getElementById("content").innerHTML +=
-    `<input type="button" value="${elt}" id="${elt}" onclick="compare(${elt})">`
+// data.forEach(element => {                                                                                 
+//     document.getElementById("content").innerHTML +=
+// `<img src="${element.url}" alt="">
+// <p>${element.question}</p>`
+//     element.choice.forEach(elt => {
+//     document.getElementById("content").innerHTML +=
+//     `<input type="button" value="${elt}" id="${elt}" onclick="compare(${elt})">`
+// });
+
+// });
+
+// Korrektur
+
+data.forEach((element) => {
+  document.getElementById(
+    "content"
+  ).innerHTML += `<img src="${element.url}" alt="">
+<p>${element.question}</p>`;
+  element.choice.forEach((elt) => {
+    document.getElementById(
+      "content"
+    ).innerHTML += `<input type="button" class='${element.question}' value="${elt}" id="${elt}" onclick="compare(${elt})">`;
+  });
 });
 
-});
 
 
+// function compare(x) {
 
+//     data.forEach(element => {
+//         let b = element.answer
+//         console.log("answer " + b)
+//         element.choice.forEach(a => {
+//             console.log("choice " + a)
+//             if (a == b) {
+//                 console.log("true")
+//               x.classList.add("true")
+//               setTimeout(function () {x.classList.remove('true') }, 1000);
+//                 } else {
+//                 console.log("false")
+//               x.classList.add("false")
+//               setTimeout(function () {x.classList.remove('false') }, 1000);
+//                 }
+//             });
+        
+        
+//         })
+      
+// }
+
+// Korrektur
 
 function compare(x) {
-
-    data.forEach(element => {
-        let b = element.answer
-        console.log("answer " + b)
-        element.choice.forEach(a => {
-            console.log("choice " + a)
-            if (a == b) {
-                console.log("true")
-              x.classList.add("true")
-              setTimeout(function () {x.classList.remove('true') }, 1000);
-                } else {
-                console.log("false")
-              x.classList.add("false")
-              setTimeout(function () {x.classList.remove('false') }, 1000);
-                }
-            });
-        
-        
-        })
-      
+  console.log(`userChoice is`, x.id, x.className);
+  let myChoice = x.id;
+  let myQuestion = x.className;
+  for (let i = 0; i < data.length; i++) {
+    if (myQuestion === data[i].question) {
+      console.log("WORKING");
+      let b = data[i].answer;
+      if (myChoice === b) {
+        console.log("true");
+        x.classList.add("true");
+        setTimeout(function () {x.classList.remove('true') }, 1000);
+      } else if (myChoice != b) {
+        console.log("false");
+        x.classList.add("false");
+        setTimeout(function () {x.classList.remove('false') }, 1000);
+      }
+    }
+  }
 }
