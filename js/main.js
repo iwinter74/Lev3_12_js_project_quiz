@@ -118,10 +118,10 @@ function compare(x) {
   let myChoice = x.id;
   let myQuestion = x.className;
   for (let i = 0; i < data.length; i++) {
-    if (myQuestion === data[i].question) {
+    if (myQuestion == data[i].question) {
       console.log("WORKING");
       let b = data[i].answer;
-      if (myChoice === b) {
+      if (myChoice == b) {
         console.log("true");
         x.classList.add("true");
         setTimeout(function () {x.classList.remove('true') }, 1000);
