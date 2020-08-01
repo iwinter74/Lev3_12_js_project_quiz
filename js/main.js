@@ -9,7 +9,7 @@ let data=[
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/4d101ba1-9275-4fb5-ba2c-5606e6c0274e.jpg",
       question:"Which is the worlds highest mountain?",
       choice:["K2","Makalu","Mount_Everest","Kilimanjaro"],
-      answer:"MountEverest",
+      answer:"Mount_Everest",
     },
     { 
       url:"https://cdn.playbuzz.com/cdn//f063e8fe-ad57-485e-8211-ed2ee0d9a205/07121a24-b34b-4711-9bfa-5287163e65ce.jpg",
