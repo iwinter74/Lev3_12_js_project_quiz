@@ -67,12 +67,13 @@ let data=[
 // <p>${element.question}</p>`
 //     element.choice.forEach(elt => {
 //     document.getElementById("content").innerHTML +=
-//     `<input type="button" value="${elt}" id="${elt}" onclick="compare(${elt})">`
+//       `<input type="button" value="${elt}" id="${elt}" onclick="compare(${elt})">`
+      
 // });
 
 // });
 
-// Korrektur
+// Korrektur Georg
 
 data.forEach((element) => {
   document.getElementById(
@@ -111,7 +112,7 @@ data.forEach((element) => {
       
 // }
 
-// Korrektur
+// Korrektur Georg
 
 function compare(x) {
   console.log(`userChoice is`, x.id, x.className);
@@ -133,3 +134,45 @@ function compare(x) {
     }
   }
 }
+
+// Korrektur Anass
+
+// const content = document.getElementById("content")
+// content.innerHTML = `<h1>Quiz</h1>`
+
+// data.forEach(elt => {
+
+//     let figure = document.createElement('figure')
+//     content.appendChild(figure)
+//     let img = document.createElement('img')
+//     img.src = elt.url
+//     figure.appendChild(img)
+//     let figcaption = document.createElement('figcaption')
+//     figure.appendChild(figcaption)
+//     let h3 = document.createElement('h3')
+//     h3.textContent = elt.question
+//     figcaption.appendChild(h3)
+//     for (let i = 0; i < elt.choice.length; i++) {
+//         let button = document.createElement("button")
+//         button.textContent = elt.choice[i]
+//         button.className = elt.answer.toString()
+//         figcaption.appendChild(button)
+//     }
+//     let btn = document.getElementsByClassName(elt.answer.toString())
+//     for (let i = 0; i < btn.length; i++) {
+//         btn[i].addEventListener("click", (e) => {
+//             console.log(e.target.innerText)
+//             if (e.target.innerText == elt.answer) {
+//                 e.target.style.background = "green"
+//             } else {
+//                 e.target.style.background = "red"
+//             }
+//             Array.from(btn).forEach(btn => {
+//                 btn.disabled = true
+//             })
+//         })
+
+//     }
+// })
+
+
